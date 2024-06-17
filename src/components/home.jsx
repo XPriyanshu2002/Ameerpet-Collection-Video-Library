@@ -43,7 +43,7 @@ export function Home() {
                     src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
                     anonymous="crossorigin"
                     type="video/mp4"
-                /> 
+                  /> 
                 </video>
                 <img src="tv.png" className=" rounded-4" style={{ position:"relative"}} />
               </div>

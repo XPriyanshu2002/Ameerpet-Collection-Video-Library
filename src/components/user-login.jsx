@@ -18,8 +18,11 @@ export function UserLogin() {
     const formik = useFormik({
         initialValues:{InputEmail:"",InputPassword:""},
         onSubmit:(userInput)=> {
-            axios.get("http://127.0.0.1:2020/get-user")
-            .then(response=> {
+            if (userInput.InputEmail==="") {
+                alert("Email Required To Login");
+            } else {
+                axios.get("http://127.0.0.1:2020/get-user")
+                .then(response=> {
                 setUserEmail(response.data.map(user=>user.Email));
                 let userDetails = response.data.find(u=>u.Email===userInput.InputEmail);
                 if (userDetails) {
@@ -48,11 +51,11 @@ export function UserLogin() {
                                                                 //     break;
                                                                 // }
                 } else {
-                    alert("Invalid Email Address");
-                    navigate("/payment-page");
+                    alert("Invalid Email Address or Email Not Registered");
                     setView(true);
                 }                                            
             })
+            }
         }   
     })
 
@@ -80,12 +83,14 @@ export function UserLogin() {
             if(userEmail.includes(RegisterInput.Email)) {
                 alert("Email already Registered please try Logging-In or\nTry Another Email");
             } else {
-                axios.post("http://127.0.0.1:2020/register-user", RegisterInput)
-                .then(()=>{
-                    alert("Congragulations You have Registered!");
-                    setCookie("user-id",RegisterInput.UserName);
-                    navigate("/user-dashboard");
-                })
+                navigate("/payment-page");
+                setCookie("newuser-id",RegisterInput);
+                // axios.post("http://127.0.0.1:2020/register-user", RegisterInput)
+                // .then(()=>{
+                //     alert("Congragulations You have Registered!");
+                //     setCookie("user-id",RegisterInput);
+                //     navigate("/user-dashboard");
+                // })
             }
         }
     })
