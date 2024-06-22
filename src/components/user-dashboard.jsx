@@ -205,8 +205,8 @@ export function UserDashboard() {
         <div style={{backgroundImage:"url(netflixbanner-2.jpg)"}}>
             <div style={{backgroundColor:"rgba(0,0,0,0.8)"}}>
                 <div className="d-flex justify-content-between p-3 bg-black">
-                    <h1 className="text-danger fw-bold py-2 ms-2">NETFLIX</h1>
-                    <Paper component="form" sx={{margin:"15px", display: "flex", alignItems: "center", width: 500 }}>
+                    <h1 className="text-danger py-2 ms-2">Ameerper Collection</h1>
+                    <Paper component="form" sx={{margin:"15px", display: "flex", alignItems: "center", width: 500, marginLeft:"-185px" }}>
                         <div>
                             <IconButton sx={{ p: '10px' }} onClick={handleMenuClick} >
                                 <MenuIcon />

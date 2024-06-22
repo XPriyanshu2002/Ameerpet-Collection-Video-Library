@@ -58,13 +58,13 @@ export function AddDashboard() {
                 <Box sx={{mt:"20px", bgcolor:"gray", pt:"30px", pb:"20px"}} component="form" className="container-fluid" onSubmit={formik.handleSubmit}>
                     <div className="row my-2">
                         <div className="col-3 fw-bold pt-4 h5">Video Id</div>
-                        <div className="col-9"><TextField className="w-75" value={videoId} onChange={formik.handleChange} type="number" variant="outlined" label="Video Id" color="secondary" autoFocus={true} fullWidth={true} name="VideoId" /></div>
+                        <div className="col-9"><TextField className="w-75"  value={videoId} type="number" variant="outlined" label="Video Id" color="secondary" autoFocus={true} fullWidth={true} name="VideoId" /></div>
                     </div>
                     <div className="row my-3">
-                        <div className="col-3 fw-bold pt-4 h5">Category Id</div>
+                        <div className="col-3 fw-bold pt-4 h5">Category</div>
                         <div className="col-9">
                             <FormControl fullWidth className="w-75" color="secondary">
-                                <InputLabel>Category Id</InputLabel>
+                                <InputLabel>Category</InputLabel>
                                 <Select label="Category Id" onChange={formik.handleChange} name="CategoryId">
                                     {
                                         categories.map(category=>
