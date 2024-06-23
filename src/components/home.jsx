@@ -45,7 +45,7 @@ export function Home() {
                     type="video/mp4"
                   /> 
                 </video>
-                <img src="tv.png" className=" rounded-4" style={{ position:"relative"}} />
+                <img src="tv.png" alt="" className=" rounded-4" style={{ position:"relative"}} />
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export function Home() {
               <video style={{position: "absolute",  paddingLeft: '110px', paddingTop: "40px", width:"525px"}} autoPlay playsInline muted loop >
                 <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4" />
               </video>
-              <img src="netflixTV-2.png" style={{ position:"relative"}} />
+              <img src="netflixTV-2.png" alt="" style={{ position:"relative"}} />
             </div>
           </div>
           <div className="text-white" style={{paddingBottom:"300px"}}>
