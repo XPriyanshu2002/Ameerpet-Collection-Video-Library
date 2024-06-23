@@ -32,14 +32,16 @@ export function DashBoard() {
                 <Link to="/add-dashboard" className="btn btn-primary mt-3">Add Video</Link>
                 <table className="table table-hover text-white mt-5 rounded-3" style={{width:"1500px", marginLeft:"35px"}}>
                     <thead>
-                        <th className="col-4">Title</th>
-                        <th className="col-4">Preview</th>
-                        <th className="col-4">Actions</th>
+                        <tr>
+                            <th className="col-4">Title</th>
+                            <th className="col-4">Preview</th>
+                            <th className="col-4">Actions</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {
                             videos.map(video=>
-                                <tr className="table-dark">
+                                <tr className="table-dark" key={video.VideoId}>
                                     <td><h5>{video.Title}</h5><br />{video.Description}</td>
                                     <td><iframe width="400" height="200" src={video.Url}></iframe></td>
                                     <td>

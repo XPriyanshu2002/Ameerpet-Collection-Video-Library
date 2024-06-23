@@ -11,7 +11,7 @@ export function AddDashboard() {
 
     let navigate = useNavigate();
     const [cookie, setCookie, removeCookie] = useCookies();
-    const [videoId, setVideoId] = useState();
+    const [videoId, setVideoId] = useState(0);
     const [categories, setCategories] = useState([]);
 
     const formik = useFormik({

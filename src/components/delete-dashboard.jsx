@@ -34,7 +34,7 @@ export function DeleteDashboard() {
   }, []);
 
   return (
-    <body style={{backgroundImage:"url(netflixbanner-2.jpg)"}} >  
+    <div style={{backgroundImage:"url(netflixbanner-2.jpg)"}} >  
        <div style={{backgroundColor:"rgba(0,0,0,0.8)", height:"100vh"}}>
                 <div className="d-flex justify-content-between bg-black"><h1 className="text-danger m-5">Delete Video</h1><span className="m-5"><AdminSignout/></span></div>
                 <div className=" d-flex justify-content-center">
@@ -60,6 +60,6 @@ export function DeleteDashboard() {
                     </div>
                 </div>
         </div>
-    </body>
+    </div>
   );
 }

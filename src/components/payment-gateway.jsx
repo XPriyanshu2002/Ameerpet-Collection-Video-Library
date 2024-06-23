@@ -12,7 +12,7 @@ export function PaymentPage() {
     return(
         <div className="container-fluid">
             <div className="d-flex justify-content-between p-5"><h1>AMEERPET COLLECTION</h1><Link to="/"><Button variant="contained" color="error">Sign In</Button></Link></div>
-            <LockOpenIcon fontSize="large" color="error" viewBox="0 24 24"/>
+            <LockOpenIcon fontSize="large" color="error" viewBox="0 0 24 24"/>
             <div className="d-flex justify-content-center align-items-center mt-2">
                 <div className=" p-3 border border-2 rounded-3 border-black" style={{height:"600px", width:"400px"}}>
                     <h3 className="mt-2">Secured Payment</h3>
@@ -29,7 +29,7 @@ export function PaymentPage() {
                         <li className="mx-4 my-2">User Friendly</li>
                         <li className="mx-4 my-2">24/7 Customer Support</li>
                     </ul>
-                    <GooglePayButton  className="mt-3" environment="PRODUCTION" paymentRequest={{
+                    {/* <GooglePayButton  className="mt-3" environment="PRODUCTION" paymentRequest={{
                         apiVersion:2, 
                         apiVersionMinor:0, 
                         merchantInfo:{
@@ -52,7 +52,7 @@ export function PaymentPage() {
                             totalPriceStatus: "FINAL",
                             totalPrice: "1.00"
                         } 
-                    }} />
+                    }} /> */}
                 </div>
             </div>
         </div>
