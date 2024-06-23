@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export function UserSignout() {
 
-    const [view, setView] = useState(false)
+    const [view, setView] = useState(false) // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies();
     let navigate = useNavigate();
 

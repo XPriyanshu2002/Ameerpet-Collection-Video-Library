@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 
 export function DeleteDashboard() {
   let params = useParams();
-  const [video, setVideo] = useState([{}]);
+  const [video, setVideo] = useState([{}]);  // eslint-disable-next-line
   const [cookie, setCookie, removeCookie] = useCookies("admin-id");
   let navigate = useNavigate();
 
@@ -30,7 +30,7 @@ export function DeleteDashboard() {
       LoadVideo();
     } else {
       navigate("*");
-    }
+    } // eslint-disable-next-line
   }, []);
 
   return (
@@ -45,7 +45,7 @@ export function DeleteDashboard() {
                         </div>
                         <div className="card-body">
                             <div className="card-img">
-                                <iframe src={video.map(v=>v.Url)} height="300" width="500"></iframe>
+                                <iframe src={video.map(v=>v.Url)} height="300" width="500" title={video.Title}></iframe>
                             </div>
                             <div className="card-text">
                                 <span className="bi bi-eye mx-5">{video.map(v=>v.Views)}</span>

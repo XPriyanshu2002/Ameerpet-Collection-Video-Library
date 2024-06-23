@@ -17,7 +17,7 @@ export function UserDashboard() {
     const [categories, setCategories] = useState([]);
     const [anchor, setAnchor] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [watchVideo, setWatchVideo] = useState({});
+    const [watchVideo, setWatchVideo] = useState({});  // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies();
     const [view, setView] = useState(false);
     const [likeColor, setLikeColor] = useState("");
@@ -198,7 +198,7 @@ export function UserDashboard() {
             LoadCategories();
         } else {
             navigate("*");
-        }
+        }   // eslint-disable-next-line
     },[])
 
     return(
@@ -232,7 +232,7 @@ export function UserDashboard() {
                     videos.map(video=>
                         <Card key={video.VideoId} sx={{maxWidth:500}} className="container-fluid mt-4">
                             <CardHeader title={video.Title}/>
-                            <CardMedia component="iframe" src={video.Url} height="300" />
+                            <CardMedia component="iframe" src={video.Url} height="300" title={video.Title} />
                             <CardContent>{video.Description}</CardContent>
                             <CardActions className="d-flex justify-content-between">
                                 <div><span><VisibilityIcon/></span><span className="mx-1 fw-bold">{video.Views}</span></div>
@@ -250,7 +250,7 @@ export function UserDashboard() {
                    <Modal open={view} container={document.body}>
                         <Card>
                             <CardHeader title={watchVideo.Title} action={<IconButton onClick={()=>{handleCloseClick(watchVideo.CategoryId)}}><CloseIcon fontSize="large" color="error"/></IconButton>} />
-                            <CardMedia component="iframe" src={watchVideo.Url} height="700"/> 
+                            <CardMedia component="iframe" src={watchVideo.Url} height="700" title={watchVideo.Title}/> 
                             <CardContent><h5>{watchVideo.Description}</h5></CardContent>
                             <CardActions className=" d-flex justify-content-between pb-4" sx={{marginTop:"-10px"}}>
                                 <div className="d-flex"><VisibilityIcon className="mx-2" fontSize="large" /><Typography fontSize={25}>{watchVideo.Views}</Typography></div>

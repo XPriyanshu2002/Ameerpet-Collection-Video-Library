@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { Link } from "react-router-dom";
-import { useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";  // eslint-disable-next-line
 import GooglePayButton from "@google-pay/button-react";
 
 export function PaymentPage() {
-
+    // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies();
     console.log(cookie["newuser-id"]);
 

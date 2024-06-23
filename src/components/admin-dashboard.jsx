@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 
 export function DashBoard() {
 
-    const [videos,setVideos] = useState([{VideoId:0, Title:'', Url:'', Description:'', Views:0, Likes:0, Dislikes:0, CategoryId:0}]);
+    const [videos,setVideos] = useState([{VideoId:0, Title:'', Url:'', Description:'', Views:0, Likes:0, Dislikes:0, CategoryId:0}]);  // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies();
     let navigate = useNavigate();
 
@@ -22,7 +22,7 @@ export function DashBoard() {
             LoadVideos();
         } else {
             navigate("*");
-        }
+        }   // eslint-disable-next-line
     },[])
 
     return(
@@ -43,7 +43,7 @@ export function DashBoard() {
                             videos.map(video=>
                                 <tr className="table-dark" key={video.VideoId}>
                                     <td><h5>{video.Title}</h5><br />{video.Description}</td>
-                                    <td><iframe width="400" height="200" src={video.Url}></iframe></td>
+                                    <td><iframe width="400" height="200" title={video.Title} src={video.Url}></iframe></td>
                                     <td>
                                         <Link to={`/edit-dashboard/${video.VideoId}`} className="bi bi-pen-fill btn btn-warning mx-2" style={{marginTop:"85px"}} />
                                         <Link to={`/delete-dashboard/${video.VideoId}`} className="bi bi-trash-fill btn btn-danger" style={{marginTop:"85px"}} />

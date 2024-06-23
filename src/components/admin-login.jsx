@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 export function AdminLogin() {
-
+    // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies("admin-id");
     let navigate = useNavigate();
     

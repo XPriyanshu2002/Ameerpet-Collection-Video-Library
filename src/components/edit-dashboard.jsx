@@ -8,7 +8,7 @@ import { useCookies } from "react-cookie";
 export function EditDashboard() {
 
     let params = useParams();
-    const [video, setVideo] = useState([{VideoId:0, CategoryId:0, Title:"", Url:"", Description:"", Views:0, Likes:0, Dislikes:0}]);
+    const [video, setVideo] = useState([{VideoId:0, CategoryId:0, Title:"", Url:"", Description:"", Views:0, Likes:0, Dislikes:0}]);  // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies();
     let navigate = useNavigate();
 
@@ -38,7 +38,7 @@ export function EditDashboard() {
             LoadVideo();
         } else {
             navigate("*");
-        }
+        }   // eslint-disable-next-line
     },[])
 
     return(
@@ -121,7 +121,7 @@ export function EditDashboard() {
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><iframe src={`${video.map(v=>v.Url)}`} onChange={formik.handleChange} name="Preview" /></td>
+                                <td><iframe src={`${video.map(v=>v.Url)}`} onChange={formik.handleChange} name="Preview" title={`${video.map(v=>v.Title)}`} /></td>
                             </tr>
                         </tbody>
                     </table>

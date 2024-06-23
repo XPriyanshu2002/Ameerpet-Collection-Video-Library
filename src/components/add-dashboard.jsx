@@ -9,8 +9,8 @@ import * as yup from "yup";
 
 export function AddDashboard() {
 
-    let navigate = useNavigate();
-    const [cookie, setCookie, removeCookie] = useCookies();
+    let navigate = useNavigate(); // eslint-disable-next-line
+    const [cookie, setCookie, removeCookie] = useCookies(); 
     const [videoId, setVideoId] = useState(0);
     const [categories, setCategories] = useState([]);
 
@@ -42,13 +42,13 @@ export function AddDashboard() {
         })
     }
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         if (cookie["admin-id"]) {
             LoadVideos();
             LoadCategories();
         } else {
-            navigate("*");
-        }
+            navigate("*"); 
+        }   // eslint-disable-next-line 
     },[])
 
     return(

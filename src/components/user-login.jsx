@@ -10,7 +10,7 @@ export function UserLogin() {
 
     const [userEmail, setUserEmail] = useState([]);
     const [check, setCheck] = useState(false);
-    var navigate = useNavigate();
+    var navigate = useNavigate();   // eslint-disable-next-line
     const [cookie, setCookie, removeCookie] = useCookies("user-id");
     const [view, setView] = useState(false);
     
