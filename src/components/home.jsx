@@ -45,16 +45,16 @@ export function Home() {
                     type="video/mp4"
                   /> 
                 </video>
-                <img src="tv.png" alt="" className=" rounded-4" style={{ position:"relative"}} />
+                <img src="tv.png" alt="" className=" rounded-4" style={{ position:"relative" }} />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div style={{backgroundImage:"url(ameerpet2.jpg)", backgroundSize:"cover"}}>
+      <div style={{ backgroundImage:"url(ameerpet2.jpg)", backgroundSize:"cover" }}>
         <div style={{backgroundColor:"rgba(0,0,0,0.7)"}}>
-          <div className="d-flex" style={{ paddingBottom:'200px',paddingTop:"200px",paddingLeft:"50px"}}>
-            <div className="text-white" style={{marginLeft:"200px", paddingTop:'170px'}}>
+          <div className="d-flex" style={{ paddingBottom:"200px", paddingTop:"200px", paddingLeft:"50px"}}>
+            <div className="text-white" style={{marginLeft:"200px", paddingTop:"170px"}}>
               <h1 className="fw-bold">Watch everywhere</h1>
               <p className="fw-bold mt-4">Stream unlimited Course Videos on your </p>
               <p className="fw-bold">phone, tablet, laptop, and TV.</p>
