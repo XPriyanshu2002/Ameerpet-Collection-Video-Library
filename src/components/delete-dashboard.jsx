@@ -12,14 +12,14 @@ export function DeleteDashboard() {
 
   function LoadVideo() {
     axios
-      .get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-video/${params.id}`)
+      .get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-video/${params.id}`)
       .then((response) => {
         setVideo(response.data);
       });
   }
 
   function handleDeleteClick() {
-    axios.delete(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//delete-video/${params.id}`).then(() => {
+    axios.delete(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/delete-video/${params.id}`).then(() => {
       alert("Video Deleted");
       navigate("/admin-dashboard");
     });

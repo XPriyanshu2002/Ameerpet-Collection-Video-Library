@@ -13,7 +13,7 @@ export function EditDashboard() {
     let navigate = useNavigate();
 
     function LoadVideo() {
-        axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-video/${params.id}`)
+        axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-video/${params.id}`)
         .then(response=>{
             setVideo(response.data);
         })
@@ -25,7 +25,7 @@ export function EditDashboard() {
         enableReinitialize: true,
 
         onSubmit: (vid)=>{
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${params.id}`, vid)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${params.id}`, vid)
             .then(()=>{
                 alert("Video Updated Successfully");
                 navigate("/admin-dashboard");

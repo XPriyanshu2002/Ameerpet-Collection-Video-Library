@@ -19,7 +19,7 @@ export function AddDashboard() {
         validationSchema: yup.object({CategoryId:yup.string().required("Required").matches(/[^0]/ ,"Required"), Title:yup.string().required("Required"), Url:yup.string().required("Required"), Description:yup.string().required("Required")}),
         enableReinitialize: true,
         onSubmit:(video)=>{
-            axios.post("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//post-video", video)
+            axios.post("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/post-video", video)
             .then(()=>{
                 alert("Video Added Susessfully");
                 navigate("/admin-dashboard");
@@ -28,7 +28,7 @@ export function AddDashboard() {
     })
 
     function LoadVideos() {
-        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos")
+        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-videos")
         .then(response=>{
             let lastVideoId = response.data[response.data.length-1];
             setVideoId(lastVideoId.VideoId+1);
@@ -36,7 +36,7 @@ export function AddDashboard() {
     }
 
     function LoadCategories() {
-        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-categories")
+        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-categories")
         .then(response=>{
             setCategories(response.data);
         })

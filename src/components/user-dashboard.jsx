@@ -26,7 +26,7 @@ export function UserDashboard() {
     var navigate = useNavigate();
 
     function LoadVideos() {
-        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos")
+        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-videos")
         .then(response=>{
             setVideos(response.data);
         })
@@ -39,21 +39,21 @@ export function UserDashboard() {
         // let video = videos.find(v=>v.VideoId===id);
         // video.Views=video.Views+1;
         // setWatchVideo(video);
-        // axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+        // axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
         // .then(()=>{
         //     console.log("View Updated");
         // })
-        // axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos")
+        // axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-videos")
         // .then(response=>{
         //     setVideos(response.data);
         // })
 
-        axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-video/${id}`)
+        axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-video/${id}`)
         .then(response=>{
             let viewVideo = response.data[0];
             viewVideo.Views=viewVideo.Views+1;
             setWatchVideo(viewVideo);
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${viewVideo.VideoId}`, viewVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${viewVideo.VideoId}`, viewVideo)
             .then(()=>{
                 console.log("View Updated");
             })
@@ -76,14 +76,14 @@ export function UserDashboard() {
         
         // if (likeColor==="") {
         //     watchVideo.Likes=e+1;
-        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
         //     .then(()=>{
         //         console.log("Liked");
         //     })
         //     setLikeColor("primary");
         // } else {
         //     watchVideo.Likes=e-1;
-        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
         //     .then(()=>{
         //         console.log("Undo Like");
         //     })
@@ -92,7 +92,7 @@ export function UserDashboard() {
 
         if (likeColor==="" && dislikeColor==="") {
             watchVideo.Likes=e+1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Liked");
             })
@@ -100,7 +100,7 @@ export function UserDashboard() {
         } else if (likeColor==="" && dislikeColor==="error") {
             watchVideo.Likes=e+1;
             watchVideo.Dislikes=watchVideo.Dislikes-1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Liked \nDislike Altered");
             })
@@ -108,7 +108,7 @@ export function UserDashboard() {
             setDislikeColor("");
         } else {
             watchVideo.Likes=e-1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Like Altered");
             })
@@ -120,14 +120,14 @@ export function UserDashboard() {
 
         // if (dislikeColor==="") {
         //     watchVideo.Dislikes=watchVideo.Dislikes+1;
-        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
         //     .then(()=>{
         //         console.log("Disliked");
         //     })
         //     setDislikeColor("error");
         // } else {
         //     watchVideo.Dislikes=watchVideo.Dislikes-1;
-        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+        //     axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
         //     .then(()=>{
         //         console.log("Undo Dislike");
         //     })
@@ -135,7 +135,7 @@ export function UserDashboard() {
 
         if (dislikeColor==="" && likeColor==="") {
             watchVideo.Dislikes=watchVideo.Dislikes+1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Disliked");
             })
@@ -143,7 +143,7 @@ export function UserDashboard() {
         } else if (dislikeColor==="" && likeColor==="primary") {
             watchVideo.Dislikes=watchVideo.Dislikes+1;
             watchVideo.Likes=watchVideo.Likes-1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Disliked \nLike Altered");
             })
@@ -151,7 +151,7 @@ export function UserDashboard() {
             setLikeColor("");
         } else {
             watchVideo.Dislikes=watchVideo.Dislikes-1;
-            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//edit-video/${watchVideo.VideoId}`, watchVideo)
+            axios.put(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/edit-video/${watchVideo.VideoId}`, watchVideo)
             .then(()=>{
                 console.log("Dislike Altered");
             })
@@ -160,7 +160,7 @@ export function UserDashboard() {
     }
 
     function LoadCategories() {
-        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-categories")
+        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-categories")
         .then(response=>{
             response.data.unshift({CategoryId:0, CategoryName:"All"});
             setCategories(response.data);
@@ -178,12 +178,12 @@ export function UserDashboard() {
 
     function handleCategoryChange(id) {
         if (id===0) {
-            axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos")
+            axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-videos")
             .then(response=>{
                 setVideos(response.data);
             })
         } else {
-            axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos/${id}`)
+            axios.get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-videos/${id}`)
             .then(response=>{
                 setVideos(response.data);
             })

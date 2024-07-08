@@ -16,7 +16,7 @@ export function AdminLogin() {
                 <Formik initialValues={{UserId:"", Password:""}}
                         validationSchema={yup.object({UserId: yup.string().required("UserId Required"), Password: yup.string().required("Password Required")})} 
                         onSubmit={(adminDetails) => {
-                            axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-admin")
+                            axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/get-admin")
                             .then(response=>{
                                 let admin = response.data.find(a=> a.AdminId===adminDetails.UserId);
                                 if (admin) {
