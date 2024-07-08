@@ -12,14 +12,14 @@ export function DeleteDashboard() {
 
   function LoadVideo() {
     axios
-      .get(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-video/${params.id}`)
+      .get(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-video/${params.id}`)
       .then((response) => {
         setVideo(response.data);
       });
   }
 
   function handleDeleteClick() {
-    axios.delete(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//delete-video/${params.id}`).then(() => {
+    axios.delete(`https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//delete-video/${params.id}`).then(() => {
       alert("Video Deleted");
       navigate("/admin-dashboard");
     });

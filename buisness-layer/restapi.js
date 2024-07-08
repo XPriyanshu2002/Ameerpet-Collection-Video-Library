@@ -166,4 +166,4 @@
  });
 
  app.listen(2020);
- console.log('Server Started At mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net/');
+ console.log('Server Started At https://66781e94bd17b90008668111--ameerpetcollections.netlify.app/');

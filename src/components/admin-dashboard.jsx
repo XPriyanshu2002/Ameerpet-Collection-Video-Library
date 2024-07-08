@@ -11,7 +11,7 @@ export function DashBoard() {
     let navigate = useNavigate();
 
     function LoadVideos() {
-        axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-videos")
+        axios.get("https://66781e94bd17b90008668111--ameerpetcollections.netlify.app//get-videos")
         .then(response=>{
             setVideos(response.data);
         })
