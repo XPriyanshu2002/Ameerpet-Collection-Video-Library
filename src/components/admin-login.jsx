@@ -16,7 +16,7 @@ export function AdminLogin() {
                 <Formik initialValues={{UserId:"", Password:""}}
                         validationSchema={yup.object({UserId: yup.string().required("UserId Required"), Password: yup.string().required("Password Required")})} 
                         onSubmit={(adminDetails) => {
-                            axios.get("http://127.0.0.1:2020/get-admin")
+                            axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-admin")
                             .then(response=>{
                                 let admin = response.data.find(a=> a.AdminId===adminDetails.UserId);
                                 if (admin) {

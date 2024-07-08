@@ -21,7 +21,7 @@ export function UserLogin() {
             if (userInput.InputEmail==="") {
                 alert("Email Required To Login");
             } else {
-                axios.get("http://127.0.0.1:2020/get-user")
+                axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-user")
                 .then(response=> {
                 setUserEmail(response.data.map(user=>user.Email));
                 let userDetails = response.data.find(u=>u.Email===userInput.InputEmail);
@@ -85,7 +85,7 @@ export function UserLogin() {
             } else {
                 navigate("/payment-page");
                 setCookie("newuser-id",RegisterInput);
-                // axios.post("http://127.0.0.1:2020/register-user", RegisterInput)
+                // axios.post("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//register-user", RegisterInput)
                 // .then(()=>{
                 //     alert("Congragulations You have Registered!");
                 //     setCookie("user-id",RegisterInput);

@@ -11,7 +11,7 @@ export function DashBoard() {
     let navigate = useNavigate();
 
     function LoadVideos() {
-        axios.get("http://127.0.0.1:2020/get-videos")
+        axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-videos")
         .then(response=>{
             setVideos(response.data);
         })

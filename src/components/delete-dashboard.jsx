@@ -12,14 +12,14 @@ export function DeleteDashboard() {
 
   function LoadVideo() {
     axios
-      .get(`http://127.0.0.1:2020/get-video/${params.id}`)
+      .get(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-video/${params.id}`)
       .then((response) => {
         setVideo(response.data);
       });
   }
 
   function handleDeleteClick() {
-    axios.delete(`http://127.0.0.1:2020/delete-video/${params.id}`).then(() => {
+    axios.delete(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//delete-video/${params.id}`).then(() => {
       alert("Video Deleted");
       navigate("/admin-dashboard");
     });

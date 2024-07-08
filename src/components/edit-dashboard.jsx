@@ -13,7 +13,7 @@ export function EditDashboard() {
     let navigate = useNavigate();
 
     function LoadVideo() {
-        axios.get(`http://127.0.0.1:2020/get-video/${params.id}`)
+        axios.get(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-video/${params.id}`)
         .then(response=>{
             setVideo(response.data);
         })
@@ -25,7 +25,7 @@ export function EditDashboard() {
         enableReinitialize: true,
 
         onSubmit: (vid)=>{
-            axios.put(`http://127.0.0.1:2020/edit-video/${params.id}`, vid)
+            axios.put(`mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//edit-video/${params.id}`, vid)
             .then(()=>{
                 alert("Video Updated Successfully");
                 navigate("/admin-dashboard");

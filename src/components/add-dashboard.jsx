@@ -19,7 +19,7 @@ export function AddDashboard() {
         validationSchema: yup.object({CategoryId:yup.string().required("Required").matches(/[^0]/ ,"Required"), Title:yup.string().required("Required"), Url:yup.string().required("Required"), Description:yup.string().required("Required")}),
         enableReinitialize: true,
         onSubmit:(video)=>{
-            axios.post("http://127.0.0.1:2020/post-video", video)
+            axios.post("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//post-video", video)
             .then(()=>{
                 alert("Video Added Susessfully");
                 navigate("/admin-dashboard");
@@ -28,7 +28,7 @@ export function AddDashboard() {
     })
 
     function LoadVideos() {
-        axios.get("http://127.0.0.1:2020/get-videos")
+        axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-videos")
         .then(response=>{
             let lastVideoId = response.data[response.data.length-1];
             setVideoId(lastVideoId.VideoId+1);
@@ -36,7 +36,7 @@ export function AddDashboard() {
     }
 
     function LoadCategories() {
-        axios.get("http://127.0.0.1:2020/get-categories")
+        axios.get("mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net//get-categories")
         .then(response=>{
             setCategories(response.data);
         })
