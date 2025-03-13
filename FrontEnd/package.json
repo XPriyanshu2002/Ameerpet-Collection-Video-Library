@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "ameerpet-collection",
-=======
-  "name": "ameerpet-collections",
->>>>>>> 8bee3392ef3ad92adb89f6f71c3da7c152bae273
   "version": "0.1.0",
   "private": true,
   "dependencies": {
