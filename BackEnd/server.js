@@ -9,7 +9,7 @@ import { dbConnection } from "./Connections/connection.js";
 import categoryRoute from "./Routes/categoryRoute.js";
 
 dotenv.config({path:".env"});
-const port = process.env.PORT || 5003;
+const port = process.env.PORT || 9000;
 dbConnection();
 
 const app = e();

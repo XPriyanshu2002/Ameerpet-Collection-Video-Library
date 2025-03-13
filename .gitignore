@@ -4,3 +4,6 @@
 ./BackEnd/.env
 node_modules
 ../FrontEnd/node_modules
+./BackEnd/.gitignore
+./FrontEnd/.gitignore
+.gitignore
