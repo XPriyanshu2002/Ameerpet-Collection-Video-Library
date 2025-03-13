@@ -47,8 +47,8 @@ export const AddVideo = async (req,res) => {
 
 export const EditVideo = async (req,res) => {
     try {
-        const findVideo = await videoModel.find({VideoId: parseInt(req.params.VideoId)});
-        const updateVideo = await videoModel.updateOne({VideoId:findVideo},{
+        const findVideo = await videoModel.findOne({VideoId: parseInt(req.params.VideoId)});
+        const updateVideo = await videoModel.updateOne({VideoId:findVideo.VideoId},{
             VideoId: parseInt(req.body.VideoId),
             CategoryId: parseInt(req.body.CategoryId),
             Title: req.body.Title,
