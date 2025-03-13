@@ -1,12 +1,14 @@
  var mongoClient = require("mongodb").MongoClient;
  var express = require("express");
  var cors = require("cors");
+ var http = require("http");
  //const { createClient } = require("@supabase/supabase-js");
 
  //const supabase = createClient("https://vpkpskeqlbmjqztxizmk.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwa3Bza2VxbGJtanF6dHhpem1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkyMDM2MDUsImV4cCI6MjAzNDc3OTYwNX0.QAFYG3k2Z7dUdzDqabsLFLKk7GKO1DnMMekmQlP-U7A") 
 
  var app = express();
- var conStr = "mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net/";
+ var conStr = "mongodb://localhost:27017";
+ //var conStr = "mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net";
  //var conStr = "mongodb+srv://Priyanshu:Priyanshu007@ameerpetcollections.hivkc9e.mongodb.net/?retryWrites=true&w=majority&appName=AmeerpetCollections"
 
  app.use(express.urlencoded({extended:true}));
@@ -16,7 +18,7 @@
  app.get('/get-user',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblUsers').find({}).toArray()
         .then(document=>{
             res.send(document);
@@ -37,7 +39,7 @@
 
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblUsers').insertOne(user)
         .then(document=>{
             console.log('User Registered');
@@ -49,7 +51,7 @@
  app.get('/get-admin',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblAdmin').find({}).toArray()
         .then(document=>{
             res.send(document);
@@ -61,7 +63,7 @@
  app.get('/get-videos',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').find({}).toArray()
         .then(document=>{
             res.send(document);
@@ -73,7 +75,7 @@
  app.get('/get-video/:id',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').find({VideoId:parseInt(req.params.id)}).toArray()
         .then(document=>{
             res.send(document);
@@ -85,7 +87,7 @@
  app.get('/get-videos/:categoryId',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').find({CategoryId:parseInt(req.params.categoryId)}).toArray()
         .then(document=>{
             res.send(document);
@@ -108,7 +110,7 @@
 
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').insertOne(video)
         .then(()=>{
             console.log('Video Added Successfully');
@@ -132,7 +134,7 @@
 
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').updateOne({VideoId:id},{$set:video})
         .then(()=>{
             console.log('Video Updated Successfully');
@@ -144,7 +146,7 @@
  app.delete('/delete-video/:id',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblVideos').deleteOne({VideoId:parseInt(req.params.id)})
         .then(()=>{
             console.log('Video Deleted');
@@ -156,7 +158,7 @@
  app.get('/get-categories',(req,res)=>{
     mongoClient.connect(conStr)
     .then(clientObject=>{
-        var dataBase = clientObject.db('ameetpet_collections');
+        var dataBase = clientObject.db('video-library');
         dataBase.collection('tblCategories').find({}).toArray()
         .then(document=>{
             res.send(document);
@@ -165,5 +167,6 @@
     });
  });
 
+ //http.createServer(app).listen(3030);
  app.listen(2020);
- console.log('Server Started At https://66781e94bd17b90008668111--ameerpetcollections.netlify.app');
+ console.log();
