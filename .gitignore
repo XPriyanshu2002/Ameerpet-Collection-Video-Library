@@ -1,3 +1,10 @@
-./BackEnd/.env
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+
 ./BackEnd/node_modules
 ./FrontEnd/node_modules
+./BackEnd/.env
+./BackEnd/.env
+node_modules
+../FrontEnd/node_modules
